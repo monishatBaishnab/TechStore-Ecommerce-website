@@ -1,7 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import { CiDark } from 'react-icons/ci'
-import { useState } from "react";
 import { FaBarsProgress } from 'react-icons/fa6'
+import { BsCart } from 'react-icons/bs'
+import { useState } from "react";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -38,11 +39,11 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center justify-center gap-2">
                         <Link to='/regester' className="text-violet-500 bg-violet-100 px-4 py-2 rounded-md hidden sm:inline-block">Sing Up</Link>
-                        <div className="cursor-pointer">
+                        <div className="cursor-pointer hidden">
                             <img className="w-10 rounded-md" src="https://i.ibb.co/p1mrBLK/fb-prfile.jpg" alt="" />
                         </div>
-                        <span className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer hidden sm:flex"><CiDark /></span>
-                        {/* <span className="inline-block bg-violet-500 p-2 rounded-full text-white text-xl cursor-pointer"><MdOutlineLightMode /></span> */}
+                        <button className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer flex"><BsCart /></button>
+                        <button className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer hidden sm:flex"><CiDark /></button> {/*<MdOutlineLightMode /> */}
                         <button onClick={() => setOpen(true)} className="text-white bg-violet-500 w-10 h-10 flex items-center justify-center rounded-md text-xl md:hidden"><FaBarsProgress /></button>
                     </div>
                     <div onClick={() => setOpen(false)} className={`absolute left-0 top-0 right-0 bottom-0 transition-all bg-violet-50/80 z-10 ${open ? 'opacity-100 visible' : 'opacity-0 invisible'} md:opacity-0 md:invisible`}></div>
