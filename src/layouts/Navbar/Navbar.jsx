@@ -32,13 +32,13 @@ const Navbar = () => {
                                 </li>
                             </ul>
                             <div className="p-5 grid grid-cols-2 gap-2 sm:hidden">
-                                <Link to='/regester' className="text-violet-500 w-full bg-violet-100 px-4 py-2 rounded-md">Sing Up</Link>
+                                <Link to='/regester' className="text-violet-500 w-full bg-violet-100 px-4 py-2 rounded-md">Regester</Link>
                                 <span className="bg-violet-500 w-full h-10 flex items-center justify-center rounded-md text-white text-xl cursor-pointer"><CiDark /></span>
                             </div>
                         </div>
                     </div>
                     <div className="flex items-center justify-center gap-2">
-                        <Link to='/regester' className="text-violet-500 bg-violet-100 px-4 py-2 rounded-md hidden sm:inline-block">Sing Up</Link>
+                        <Link to='/regester' className="text-violet-500 bg-violet-100 px-4 py-2 rounded-md hidden sm:inline-block">Regester</Link>
                         <div className="cursor-pointer hidden">
                             <img className="w-10 rounded-md" src="https://i.ibb.co/p1mrBLK/fb-prfile.jpg" alt="" />
                         </div>

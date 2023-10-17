@@ -14,7 +14,7 @@ const Header = () => {
                                 <h1 className="text-3xl md:text-5xl font-medium md:leading-[55px] my-5">Unleash the Power of Innovation with the Latest in Tech and Electronics</h1>
                                 <p className="text-violet-300">Explore the Latest in Tech and Electronics – Expert Reviews, How-Tos, and Cutting-Edge Updates. Stay Informed, Stay Ahead!</p>
                                 <button onClick={() => navigate('/regester')} className='bg-violet-500 border-violet-600 px-5 py-2 rounded-md mt-8 flex items-center gap-2'>
-                                    <span>Sign Up</span>
+                                    <span>Regester</span>
                                     <span><FaArrowRightToBracket /></span>
                                 </button>
                             </div>
