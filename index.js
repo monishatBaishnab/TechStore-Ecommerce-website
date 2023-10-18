@@ -34,7 +34,17 @@ const run = async () => {
             res.send(brands);
         });
 
-        
+        app.get('/products/:id', async(req, res) => {
+            const id = req.params.id;
+            const product = await productCollection.findOne({_id: new ObjectId(id)});
+            res.send(product);
+        });
+
+        app.get('/products/brand/:brand', async(req, res) => {
+            const brand = req.params.brand;
+            const product = await productCollection.find({brand_name: brand}).toArray();
+            res.send(product);
+        });
 
 
         await client.db('admin').command({ ping: 1 });
