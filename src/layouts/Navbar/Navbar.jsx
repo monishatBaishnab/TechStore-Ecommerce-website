@@ -1,11 +1,30 @@
 import { Link, NavLink } from "react-router-dom";
 import { CiDark } from 'react-icons/ci'
 import { FaBarsProgress } from 'react-icons/fa6'
-import { BsCart } from 'react-icons/bs'
-import { useState } from "react";
+import { BsArrowRight, BsCart } from 'react-icons/bs'
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Toast from "../../components/Tost";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const [showProfile, setShowProfile] = useState(false);
+    const {user, singOutUser, setSuccessMessage} = useContext(AuthContext);
+
+    const handleLogout = () => {
+        singOutUser()
+        .then(() => {
+            setSuccessMessage('You have been successfully logged out. Thank you for using our services!');
+        })
+        .catch(err => {
+            const error = err.message.slice(22, -2);
+                Toast.fire({
+                    icon: 'error',
+                    title: error
+                })
+        })
+    }
+
     return (
         <nav className=" bg-white border-b border-b-slate-200">
             <div className="c-container py-3">
@@ -39,9 +58,16 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center justify-center gap-2">
                         <Link to='/regester' className="text-violet-500 bg-violet-100 px-4 py-2 rounded-md hidden sm:inline-block">Regester</Link>
-                        <div className="cursor-pointer hidden">
-                            <img className="w-10 rounded-md" src="https://i.ibb.co/p1mrBLK/fb-prfile.jpg" alt="" />
+                        <div className={`${user === null && 'hidden'} relative`}>
+                            <img onClick={() => setShowProfile(!showProfile)} className="w-10 cursor-pointer rounded-md" src="https://i.ibb.co/p1mrBLK/fb-prfile.jpg" alt="" />
+                            <div className={`absolute right-0 w-60 transition-all ${showProfile ? 'opacity-100 visible' : 'invisible opacity-0'}`}>
+                                <div className="bg-white p-5 border rounded">
+                                    <h5 className="text-violet-500 text-center font-medium">{user?.displayName}</h5>
+                                    <button onClick={handleLogout} className="w-full flex gap-1 justify-center items-center mt-2 text-slate-500">Log out  <BsArrowRight /></button>
+                                </div>
+                            </div>
                         </div>
+                        
                         <button className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer flex"><BsCart /></button>
                         <button className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer hidden sm:flex"><CiDark /></button> {/*<MdOutlineLightMode /> */}
                         <button onClick={() => setOpen(true)} className="text-white bg-violet-500 w-10 h-10 flex items-center justify-center rounded-md text-xl md:hidden"><FaBarsProgress /></button>

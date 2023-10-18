@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signInWithEmailAndPassword, GithubAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signInWithEmailAndPassword, GithubAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 const auth = getAuth(app);
@@ -30,6 +30,10 @@ const AuthProvider = ({ children }) => {
         setUserLoading(true);
         return signInWithPopup(auth, gitProvider);
     }
+    const singOutUser = () => {
+        setUserLoading(true);
+        return signOut(auth);
+    }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
@@ -45,6 +49,7 @@ const AuthProvider = ({ children }) => {
         updateUser,
         signInWithEmailPass,
         signInWithGitHub,
+        singOutUser,
         user,
         userLoading,
         successMessage,

@@ -101,7 +101,7 @@ const Regester = () => {
                         <Input required name='cpassword' label='Confirm Password' type='password' placeholder='Enter Confirm Password' />
                         <button className="w-full mt-4 text-white bg-violet-500 transition-all px-4 py-2 rounded-md hover:bg-violet-500/90">Regester</button>
                     </form>
-                    <p className="mt-3 text-c-dark">If you have an account yet, Please <Link to='/login' className="text-violet-500">Log in.</Link></p>
+                    <p className="mt-3 text-c-dark">If you have an account yet, Please <Link to='/Login' className="text-violet-500">Log in.</Link></p>
                     <Link to='/' className="absolute top-5 left-5 p-2 bg-slate-100 rounded-md cursor-pointer">
                         <span className="text-2xl text-c-black"><BsArrowLeft /></span>
                     </Link>
