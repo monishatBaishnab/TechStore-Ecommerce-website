@@ -8,6 +8,7 @@ import AddProduct from "../pages/AddProduct/AddProduct";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 import Login from "../pages/Login/Login";
 import Regester from "../pages/Regester/Regester";
+import PrivateRouote from "../PrivateRouote/PrivateRouote";
 
 const Router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/addProduct',
-                element: <AddProduct />
+                element: <PrivateRouote><AddProduct /></PrivateRouote>
             },
             {
                 path: '/updateProduct',

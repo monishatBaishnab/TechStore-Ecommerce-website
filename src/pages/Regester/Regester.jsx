@@ -88,9 +88,9 @@ const Regester = () => {
     }
 
     return (
-        <div className="bg-slate-100 min-h-screen p-10">
+        <div className="bg-slate-100 min-h-screen p-5 md:p-10">
             <div className='max-w-md mx-auto'>
-                <div className="bg-white p-10 relative">
+                <div className="bg-white p-5 md:p-10 relative">
                     <h4 className="text-2xl text-center mb-5 font-medium">Create User</h4>
                     <p className="text-center text-c-dark mb-2">Process of registering and configuring user access in digital platforms.</p>
                     <form onSubmit={handleRegester}>

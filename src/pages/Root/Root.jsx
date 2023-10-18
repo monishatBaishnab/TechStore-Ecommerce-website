@@ -1,12 +1,14 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../../layouts/Navbar/Navbar";
 import Footer from "../../layouts/Footer/Footer";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Toast from "../../components/Tost";
+import LoadinPage from "../../layouts/LoadinPage/LoadinPage";
 
 const Root = () => {
     const { successMessage, setSuccessMessage } = useContext(AuthContext);
+    const navigation = useNavigation();
     
     if (successMessage !== null) {
         Toast.fire({
@@ -23,7 +25,7 @@ const Root = () => {
     return (
         <div>
             <Navbar />
-            <Outlet />
+            {navigation.state === 'loading' ? <LoadinPage /> : <Outlet />}        
             <Footer />
         </div>
     );
