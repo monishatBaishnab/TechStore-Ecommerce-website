@@ -24,6 +24,16 @@ const run = async () => {
         const productCollection = client.db('TechStore').collection('products');
         const brandCollection = client.db('TechStore').collection('brands');
 
+        app.get('/products', async(req, res) => {
+            const products = await productCollection.find().toArray();
+            res.send(products);
+        });
+
+        app.get('/brands', async(req, res) => {
+            const brands = await brandCollection.find().toArray();
+            res.send(brands);
+        });
+
         
 
 
