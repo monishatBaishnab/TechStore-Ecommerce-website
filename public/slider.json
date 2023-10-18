@@ -1,0 +1,132 @@
+{
+    "brands": [
+        {
+            "name": "Amazon",
+            "sliders": [
+                {
+                    "type": "new-product",
+                    "image": "amazon-new-product.jpg",
+                    "headline": "Introducing the All-New Amazon Echo",
+                    "description": "Meet the latest addition to the Amazon Echo family. The Echo's enhanced features, premium sound quality, and smart home integration make it the ultimate voice assistant for your home.",
+                    "ctaText": "Learn More",
+                    "url": "https://www.amazon.com/echo",
+                    "branding": "amazon-logo.png"
+                },
+                {
+                    "type": "special-offer",
+                    "image": "amazon-special-offer.jpg",
+                    "headline": "Amazon Prime Day 2023: Exclusive Deals Await You",
+                    "description": "Get ready for the biggest shopping event of the year. Amazon Prime Day offers incredible discounts on a wide range of products. Don't miss this opportunity to save big.",
+                    "ctaText": "Shop Now",
+                    "url": "https://www.amazon.com/primeday",
+                    "branding": "amazon-logo.png"
+                },
+                {
+                    "type": "customer-testimonial",
+                    "image": "amazon-happy-customers.jpg",
+                    "headline": "Amazon Customer Stories: Real Experiences, Real Satisfaction",
+                    "description": "Explore stories from Amazon customers who have found convenience, quality, and value in our products. Read their reviews and discover why Amazon is a trusted choice.",
+                    "ctaText": "Read Reviews",
+                    "url": "https://www.amazon.com/customer-reviews",
+                    "branding": "amazon-logo.png"
+                }
+            ]
+        },
+        {
+            "name": "Sony",
+            "sliders": [
+                {
+                    "type": "new-product",
+                    "image": "sony-new-product.jpg",
+                    "headline": "Experience Sony's Latest Innovation",
+                    "description": "Discover the future of entertainment with our cutting-edge product, the Sony [Product Name]. Immerse yourself in stunning visuals and crystal-clear sound.",
+                    "ctaText": "Explore Now",
+                    "url": "https://www.sony.com/products/[product-name]",
+                    "branding": "sony-logo.png"
+                },
+                {
+                    "type": "special-offer",
+                    "image": "sony-special-offer.jpg",
+                    "headline": "Sony Summer Sale: Up to 30% Off",
+                    "description": "Don't miss the Sony Summer Sale. Get your favorite Sony products at amazing discounts. Upgrade your home entertainment today!",
+                    "ctaText": "Shop Now",
+                    "url": "https://www.sony.com/summer-sale",
+                    "branding": "sony-logo.png"
+                },
+                {
+                    "type": "customer-testimonial",
+                    "image": "sony-happy-customers.jpg",
+                    "headline": "Sony: Loved by Our Customers",
+                    "description": "Read real testimonials from Sony enthusiasts who have experienced the best in audio and visual technology. See why Sony is the choice for quality and innovation.",
+                    "ctaText": "Read Reviews",
+                    "url": "https://www.sony.com/customer-reviews",
+                    "branding": "sony-logo.png"
+                }
+            ]
+        },
+        {
+            "name": "Apple",
+            "sliders": [
+                {
+                    "type": "new-product",
+                    "image": "apple-new-product.jpg",
+                    "headline": "Unveiling the New Apple [Product Name]",
+                    "description": "Introducing the latest Apple innovation - the [Product Name]. Packed with advanced features, it's designed to transform the way you live, work, and play.",
+                    "ctaText": "Learn More",
+                    "url": "https://www.apple.com/products/[product-name]",
+                    "branding": "apple-logo.png"
+                },
+                {
+                    "type": "special-offer",
+                    "image": "apple-special-offer.jpg",
+                    "headline": "Apple Back-to-School Event: Save on MacBooks and iPads",
+                    "description": "Get ready for school with Apple's Back-to-School Event. Students and educators can enjoy special pricing on MacBooks and iPads.",
+                    "ctaText": "Shop Now",
+                    "url": "https://www.apple.com/back-to-school",
+                    "branding": "apple-logo.png"
+                },
+                {
+                    "type": "customer-testimonial",
+                    "image": "apple-happy-customers.jpg",
+                    "headline": "Apple: Enriching Lives Worldwide",
+                    "description": "Discover real stories from Apple users who have benefited from the seamless integration of Apple products in their daily lives. See the Apple experience through their eyes.",
+                    "ctaText": "Read Reviews",
+                    "url": "https://www.apple.com/customer-reviews",
+                    "branding": "apple-logo.png"
+                }
+            ]
+        },
+        {
+            "name": "Samsung",
+            "sliders": [
+                {
+                    "type": "new-product",
+                    "image": "samsung-new-product.jpg",
+                    "headline": "The Future of Tech: Samsung [Product Name]",
+                    "description": "Get ahead with Samsung's latest tech marvel, the [Product Name]. With state-of-the-art features and stunning design, it redefines what's possible in the tech world.",
+                    "ctaText": "Discover Now",
+                    "url": "https://www.samsung.com/products/[product-name]",
+                    "branding": "samsung-logo.png"
+                },
+                {
+                    "type": "special-offer",
+                    "image": "samsung-special-offer.jpg",
+                    "headline": "Samsung Galaxy Month: Exclusive Offers Await",
+                    "description": "Celebrate Samsung Galaxy Month with exclusive offers on a range of products. Experience the future of technology at discounted prices.",
+                    "ctaText": "Shop Now",
+                    "url": "https://www.samsung.com/galaxy-month",
+                    "branding": "samsung-logo.png"
+                },
+                {
+                    "type": "customer-testimonial",
+                    "image": "samsung-happy-customers.jpg",
+                    "headline": "Samsung: Inspiring User Stories",
+                    "description": "Read inspiring stories from Samsung users who have integrated Samsung products into their lives. Explore how Samsung empowers people worldwide.",
+                    "ctaText": "Read Reviews",
+                    "url": "https://www.samsung.com/customer-stories",
+                    "branding": "samsung-logo.png"
+                }
+            ]
+        }
+    ]
+}
