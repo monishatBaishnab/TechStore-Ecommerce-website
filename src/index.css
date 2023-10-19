@@ -29,3 +29,11 @@
 .services .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
     content: none !important;
 }
+.swiper-slide-active .text{
+    animation: fadeInUp;
+    animation-duration: .5s;
+}
+.swiper-slide-active .image{
+    animation: zoomIn;
+    animation-duration: .5s;
+}
