@@ -25,6 +25,7 @@ const run = async () => {
         const productCollection = client.db('TechStore').collection('products');
         const brandCollection = client.db('TechStore').collection('brands');
         const cartProductsCollection = client.db('TechStore').collection('cartProducts');
+        const slidersCollection = client.db('TechStore').collection('sliders');
 
         app.get('/products', async (req, res) => {
             const products = await productCollection.find().toArray();
@@ -34,6 +35,17 @@ const run = async () => {
         app.get('/brands', async (req, res) => {
             const brands = await brandCollection.find().toArray();
             res.send(brands);
+        });
+
+        app.get('/products/cart', async (req, res) => {
+            const cartProducts = await cartProductsCollection.find().toArray();
+            res.send(cartProducts);
+        });
+
+        app.get('/sliders/:name', async (req, res) => {
+            const name = req.params.name;
+            const sliders = await slidersCollection.find({name: name}).toArray();
+            res.send(sliders);
         });
 
 
@@ -56,9 +68,8 @@ const run = async () => {
             res.send(result);
         })
         
-        app.post('/cartProducts', async(req, res) => {
+        app.post('/products/cart', async(req, res) => {
             const cartProduct = req.body;
-            console.log(cartProduct);
             const result = await cartProductsCollection.insertOne(cartProduct);
             res.send(result);
         })
@@ -80,6 +91,13 @@ const run = async () => {
                 }
             }
             const result = await productCollection.updateOne(filter, updatedProduct, option);
+            res.send(result);
+        })
+
+        app.delete('/products/cart/:id', async(req, res) => {
+            const id = req.params.id;
+            const filter = {_id: new ObjectId(id)}
+            const result = await cartProductsCollection.deleteOne(filter);
             res.send(result);
         })
 
