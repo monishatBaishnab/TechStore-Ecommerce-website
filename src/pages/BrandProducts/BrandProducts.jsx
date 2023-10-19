@@ -8,6 +8,7 @@ import { EffectFade, Navigation } from 'swiper/modules';
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import 'swiper/css/effect-fade';
 import BrandCard from "../../components/BrandCard";
+import Empty from "../../layouts/Empty/Empty";
 
 const BrandProducts = () => {
     const brandProducts = useLoaderData();
@@ -46,11 +47,16 @@ const BrandProducts = () => {
                 </div>
             </div>
             <div className="c-container">
-                <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    {
-                        brandProducts?.map(product => <ProductCard key={product._id} product={product} />)
-                    }
-                </div>
+                {
+                    brandProducts.length > 0 ?
+                        <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                            {
+                                brandProducts?.map(product => <ProductCard key={product._id} product={product} />)
+                            }
+                        </div>
+                        :
+                        <Empty />
+                }
             </div>
         </section>
     );

@@ -9,8 +9,8 @@ const ProductDetails = () => {
 
     const handleAddToCart = () => {
         const cartProduct  = {productId: _id, image, name, price, rating};
-        console.log(cartProduct);
-        fetch('http://localhost:5000/cartProducts', {
+        
+        fetch('http://localhost:5000/products/cart', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'

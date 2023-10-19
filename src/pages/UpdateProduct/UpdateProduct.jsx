@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Input from "../../components/Input";
 import TextArea from "../../components/TextArea";
 import Toast from "../../components/Tost";
+import PageTitle from "../../components/PageTitle";
 
 const UpdateProduct = () => {
     const product = useLoaderData();
@@ -38,6 +39,7 @@ const UpdateProduct = () => {
     }
     return (
         <section>
+            <PageTitle page='Update Product' name={name} />
             <div className="c-container">
                 <form onSubmit={handleAddProduct}>
                     <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-5">
