@@ -3,25 +3,40 @@ import { BsTrash3 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Toast from "./Tost";
+import Swal from "sweetalert2";
 
 const CartCard = ({ product, products, setProducts }) => {
     const navigate = useNavigate();
 
     const handleDelete = () => {
-        fetch(`https://tech-store-server-bma33retc-monishats-projects.vercel.app/products/cart/${product._id}`,{
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                if(data.acknowledged){
-                    const filterProducts = products.filter(fproduct => fproduct._id !== product._id);
-                    setProducts(filterProducts);
-                    Toast.fire({
-                        icon: 'success',
-                        title: "Product Deleted"
+
+        Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://tech-store-server-bma33retc-monishats-projects.vercel.app/products/cart/${product._id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.acknowledged) {
+                            const filterProducts = products.filter(fproduct => fproduct._id !== product._id);
+                            setProducts(filterProducts);
+                            Toast.fire({
+                                icon: 'success',
+                                title: "Product Deleted"
+                            })
+                        }
                     })
-                }
-            })
+            }
+        })
+
+
     }
     return (
         <div className="grid gap-5 grid-cols-3">

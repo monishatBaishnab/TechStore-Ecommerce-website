@@ -42,8 +42,8 @@ const FeatureProducts = () => {
 
                 </Swiper>
                 <div className='flex items-center gap-5 justify-center mt-10'>
-                    <span className='swiper-button-prev feature-btn-prev p-2 text-2xl transition-all rounded-md bg-green-100'><BsArrowLeft className='' /></span>
-                    <span className='swiper-button-next feature-btn-next p-2 text-2xl transition-all rounded-md bg-green-100'><BsArrowRight className='' /></span>
+                    <span className='swiper-button-prev feature-btn-prev p-2 text-2xl transition-all rounded-md bg-cyan-100'><BsArrowLeft className='' /></span>
+                    <span className='swiper-button-next feature-btn-next p-2 text-2xl transition-all rounded-md bg-cyan-100'><BsArrowRight className='' /></span>
                 </div>
             </div>
         </section>
