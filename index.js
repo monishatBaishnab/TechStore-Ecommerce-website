@@ -5,7 +5,8 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.viujuo0.mongodb.net/?retryWrites=true&w=majority`;
+// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.viujuo0.mongodb.net/?retryWrites=true&w=majority`;
+const uri = "mongodb://localhost:27017"
 
 app.use(cors());
 app.use(express.json());
@@ -46,6 +47,12 @@ const run = async () => {
             res.send(product);
         });
 
+
+        app.post('/products', async(req, res) => {
+            const product = req.body;
+            const result = await productCollection.insertOne(product);
+            res.send(result);
+        })
 
         await client.db('admin').command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
