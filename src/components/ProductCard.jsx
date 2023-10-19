@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const ProductCard = ({ product }) => {
     const { _id, image, name, type, price, rating } = product || {};
     return (
-        <div className="bg-white p-5 rounded-lg shadow-sm transition-all flex flex-col justify-between hover:shadow-md hover:scale-[1.02]">
+        <div  data-aos="fade-up" className="bg-white p-5 rounded-lg shadow-sm transition-all flex flex-col justify-between hover:shadow-md hover:scale-[1.02]">
             <div className="flex w-full justify-center bg-slate-100 rounded-md">
                 <div className="w-40 h-60 overflow-hidden rounded-md">
                     <img className="w-full h-full object-contain" src={image} alt="" />
@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
             </div>
             <div className="grid grid-cols-2 gap-2">
                 <Link to={`/productDetails/${_id}`} className="mt-4 w-full bg-cyan-100 px-5 py-2 text-center rounded-md text-cyan-500 transition-all hover:bg-cyan-500 hover:text-white">Details</Link>
-                <button className="mt-4 w-full bg-cyan-100 px-5 py-2 rounded-md text-cyan-500 transition-all hover:bg-cyan-500 hover:text-white">Update</button>
+                <Link to={`/updateProduct/${_id}`} className="mt-4 w-full bg-cyan-100 px-5 py-2 text-center rounded-md text-cyan-500 transition-all hover:bg-cyan-500 hover:text-white">Update</Link>
             </div>
         </div>
     );

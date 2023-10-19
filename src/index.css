@@ -29,11 +29,3 @@
 .services .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
     content: none !important;
 }
-
-div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm{
-    background-color: rgb(34 197 94) !important;
-}
-
-#ourEvent:hover #ourEventImg{
-    transform: scale(1.1);
-}

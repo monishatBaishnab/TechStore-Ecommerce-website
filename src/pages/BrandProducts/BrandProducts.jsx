@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation } from 'swiper/modules';
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import 'swiper/css/effect-fade';
+import BrandCard from "../../components/BrandCard";
 
 const BrandProducts = () => {
     const brandProducts = useLoaderData();
@@ -17,7 +18,7 @@ const BrandProducts = () => {
             <PageTitle name={brand} page='Brand Products' />
             <div>
                 <div className="c-container">
-                    <div className="c-container services">
+                    <div className="services">
                         <Swiper
                             navigation={{
                                 nextEl: ".swiper-button-next",
@@ -33,7 +34,7 @@ const BrandProducts = () => {
                             className="services" >
 
                             {
-                                brandProducts?.map(product => <SwiperSlide key={product._id}><ProductCard product={product} /></SwiperSlide>)
+                                brandProducts?.map(product => <SwiperSlide key={product._id}><BrandCard /></SwiperSlide>)
                             }
 
                             <div className='flex items-center gap-1 justify-end mt-10'>

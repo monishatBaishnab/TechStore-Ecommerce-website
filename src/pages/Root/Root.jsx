@@ -5,6 +5,8 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Toast from "../../components/Tost";
 import LoadinPage from "../../layouts/LoadinPage/LoadinPage";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Root = () => {
     const { successMessage, setSuccessMessage } = useContext(AuthContext);
@@ -21,6 +23,10 @@ const Root = () => {
             setSuccessMessage(null);
         }, 1000);
     }, [setSuccessMessage])
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
     return (
         <div>

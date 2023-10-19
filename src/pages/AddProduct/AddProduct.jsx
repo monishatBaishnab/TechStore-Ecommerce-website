@@ -1,6 +1,7 @@
 import Input from "../../components/Input";
 import SectionTitle from "../../components/SectionTitle";
 import TextArea from "../../components/TextArea";
+import Toast from "../../components/Tost";
 
 const AddProduct = () => {
     const section_name = 'Add Product';
@@ -17,8 +18,25 @@ const AddProduct = () => {
         const image = form.image.value;
         const shortDescription = form.shortDescription.value;
 
-        const product = {name, brandName, type, price, rating, image, shortDescription};
-        console.log(product);
+        const product = { name, brandName, type, price, rating, image, shortDescription };
+        // const str = JSON.stringify(product);
+
+        fetch('http://localhost:5000/products', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if(data.acknowledged){
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Successfully added Product to Mongodb.'
+                    })
+                }
+            })
     }
     return (
         <section>

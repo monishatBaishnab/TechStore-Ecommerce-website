@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 const BrandCard = ({ brand }) => {
-    const { name, image } = brand;
+    const { name, image } = brand || {};
     const navigate = useNavigate();
     return (
         <div>

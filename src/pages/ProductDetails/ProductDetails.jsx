@@ -1,11 +1,34 @@
 import { AiFillStar } from "react-icons/ai";
 import { Link, useLoaderData } from "react-router-dom";
 import PageTitle from "../../components/PageTitle";
+import Toast from "../../components/Tost";
 
 const ProductDetails = () => {
     const product = useLoaderData();
-    // console.log(product);
-    const { image, name, brand_name, type, price, description, rating } = product;
+    console.log(product);
+    const { _id, image, name, brand_name, type, price, description, rating } = product;
+
+    const handleAddToCart = () => {
+        const cartProduct  = {productId: _id, image, name, price, rating};
+        console.log(cartProduct);
+        fetch('http://localhost:5000/cartProducts', {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(cartProduct)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.acknowledged){
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Successfully added cart.'
+                })
+            }
+        })
+    }
+
     return (
         <section>
             <PageTitle page={'Product Details'} name={name} />
@@ -38,7 +61,7 @@ const ProductDetails = () => {
                         <h4 className="text-xl font-medium text-cyan-500 mt-5">Description</h4>
                         <p className="mt-3 text-slate-500">{description}</p>
                         <div className="mt-5 flex items-center gap-3">
-                            <button className="px-4 py-2 bg-cyan-500 rounded transition-all hover:bg-cyan-500/90 text-white">Add to Cart</button>
+                            <button onClick={handleAddToCart} className="px-4 py-2 bg-cyan-500 rounded transition-all hover:bg-cyan-500/90 text-white">Add to Cart</button>
                             <Link to='/' className="px-4 py-2 bg-cyan-100 rounded text-cyan-500 transition-all hover:text-white hover:bg-cyan-500">Go to Cart</Link>
                         </div>
                     </div>
