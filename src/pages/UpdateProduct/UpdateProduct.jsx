@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import Input from "../../components/Input";
 import TextArea from "../../components/TextArea";
+import Toast from "../../components/Tost";
 
 const UpdateProduct = () => {
     const product = useLoaderData();
-    const {_id, name, brand_name, type, price, rating, image, description} = product;
+    const { _id, name, brand_name, type, price, rating, image, description } = product;
     const handleAddProduct = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -26,7 +27,14 @@ const UpdateProduct = () => {
             body: JSON.stringify(product)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.acknowledged) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Successfully Update Product in Mongodb.'
+                    })
+                }
+            })
     }
     return (
         <section>

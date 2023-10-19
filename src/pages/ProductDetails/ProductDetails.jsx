@@ -5,7 +5,6 @@ import Toast from "../../components/Tost";
 
 const ProductDetails = () => {
     const product = useLoaderData();
-    console.log(product);
     const { _id, image, name, brand_name, type, price, description, rating } = product;
 
     const handleAddToCart = () => {
@@ -62,7 +61,7 @@ const ProductDetails = () => {
                         <p className="mt-3 text-slate-500">{description}</p>
                         <div className="mt-5 flex items-center gap-3">
                             <button onClick={handleAddToCart} className="px-4 py-2 bg-cyan-500 rounded transition-all hover:bg-cyan-500/90 text-white">Add to Cart</button>
-                            <Link to='/' className="px-4 py-2 bg-cyan-100 rounded text-cyan-500 transition-all hover:text-white hover:bg-cyan-500">Go to Cart</Link>
+                            <Link to='/cart' className="px-4 py-2 bg-cyan-100 rounded text-cyan-500 transition-all hover:text-white hover:bg-cyan-500">Go to Cart</Link>
                         </div>
                     </div>
                 </div>

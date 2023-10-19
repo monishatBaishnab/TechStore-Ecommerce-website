@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { CiDark } from 'react-icons/ci'
 import { FaBarsProgress } from 'react-icons/fa6'
 import { BsArrowRight, BsCart } from 'react-icons/bs'
@@ -7,6 +7,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Toast from "../../components/Tost";
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
     const { user, singOutUser, userLoading } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const Navbar = () => {
     const handleLogout = () => {
         singOutUser()
             .then(() => {
-                
+
             })
             .catch(err => {
                 const error = err.message.slice(22, -2);
@@ -50,9 +51,14 @@ const Navbar = () => {
                                 <li className="text-slate-500">
                                     <NavLink onClick={() => setOpen(false)} to='/products' className={({ isActive, isPending }) => isActive ? 'text-violet-500' : isPending ? 'text-violet-500' : 'text-slate-500 transition-all hover:text-violet-500'}>Products</NavLink>
                                 </li>
-                                <li className="text-slate-500">
-                                    <NavLink onClick={() => setOpen(false)} to='/addProduct' className={({ isActive, isPending }) => isActive ? 'text-violet-500' : isPending ? 'text-violet-500' : 'text-slate-500 transition-all hover:text-violet-500'}>AddProducts</NavLink>
-                                </li>
+                                {
+                                    user !== null &&
+
+                                    <li className="text-slate-500">
+                                        <NavLink onClick={() => setOpen(false)} to='/addProduct' className={({ isActive, isPending }) => isActive ? 'text-violet-500' : isPending ? 'text-violet-500' : 'text-slate-500 transition-all hover:text-violet-500'}>AddProducts</NavLink>
+                                    </li>
+                                }
+
                             </ul>
                             <div className="p-5 grid grid-cols-2 gap-2 sm:hidden">
                                 <Link to='/regester' className={`text-violet-500 w-full bg-violet-100 px-4 py-2 rounded-md ${user !== null || userLoading === true && 'hidden'}`}>Regester</Link>
@@ -72,7 +78,7 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <button className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer flex"><BsCart /></button>
+                        <button onClick={() => navigate('/cart')} className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer flex"><BsCart /></button>
                         <button className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer hidden sm:flex"><CiDark /></button> {/*<MdOutlineLightMode /> */}
                         <button onClick={() => setOpen(true)} className="text-white bg-violet-500 w-10 h-10 flex items-center justify-center rounded-md text-xl md:hidden"><FaBarsProgress /></button>
                     </div>
