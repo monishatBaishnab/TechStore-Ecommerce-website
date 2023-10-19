@@ -5,8 +5,8 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
-// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.viujuo0.mongodb.net/?retryWrites=true&w=majority`;
-const uri = "mongodb://localhost:27017"
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.viujuo0.mongodb.net/?retryWrites=true&w=majority`;
+// const uri = "mongodb://localhost:27017"
 
 app.use(cors());
 app.use(express.json());
@@ -24,6 +24,7 @@ const run = async () => {
         await client.connect();
         const productCollection = client.db('TechStore').collection('products');
         const brandCollection = client.db('TechStore').collection('brands');
+        const cartProductsCollection = client.db('TechStore').collection('cartProducts');
 
         app.get('/products', async (req, res) => {
             const products = await productCollection.find().toArray();
@@ -34,6 +35,7 @@ const run = async () => {
             const brands = await brandCollection.find().toArray();
             res.send(brands);
         });
+
 
         app.get('/products/:id', async (req, res) => {
             const id = req.params.id;
@@ -51,6 +53,13 @@ const run = async () => {
         app.post('/products', async (req, res) => {
             const product = req.body;
             const result = await productCollection.insertOne(product);
+            res.send(result);
+        })
+        
+        app.post('/cartProducts', async(req, res) => {
+            const cartProduct = req.body;
+            console.log(cartProduct);
+            const result = await cartProductsCollection.insertOne(cartProduct);
             res.send(result);
         })
 
