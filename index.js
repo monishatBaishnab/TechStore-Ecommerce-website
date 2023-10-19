@@ -27,6 +27,10 @@ const run = async () => {
         const cartProductsCollection = client.db('TechStore').collection('cartProducts');
         const slidersCollection = client.db('TechStore').collection('sliders');
 
+        app.get('/', (req, res) => {
+            res.send('Server is Running');
+        })
+
         app.get('/products', async (req, res) => {
             const products = await productCollection.find().toArray();
             res.send(products);
@@ -82,12 +86,12 @@ const run = async () => {
             const updatedProduct = {
                 $set: {
                     name: product.name,
-                    brand_name: product.brandName,
+                    brand_name: product.brand_name,
                     type: product.type,
                     price: product.price,
                     rating: product.rating,
                     image: product.image,
-                    description: product.shortDescription
+                    description: product.description
                 }
             }
             const result = await productCollection.updateOne(filter, updatedProduct, option);
