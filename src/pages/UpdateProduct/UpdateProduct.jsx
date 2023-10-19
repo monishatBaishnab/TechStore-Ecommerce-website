@@ -6,6 +6,7 @@ import PageTitle from "../../components/PageTitle";
 
 const UpdateProduct = () => {
     const product = useLoaderData();
+    console.log(product);
     const { _id, name, brand_name, type, price, rating, image, description } = product;
     const handleAddProduct = (e) => {
         e.preventDefault();
