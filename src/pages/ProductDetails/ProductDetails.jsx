@@ -10,7 +10,7 @@ const ProductDetails = () => {
     const handleAddToCart = () => {
         const cartProduct  = {productId: _id, image, name, price, rating};
         
-        fetch('http://localhost:5000/products/cart', {
+        fetch('https://tech-store-server-bma33retc-monishats-projects.vercel.app/products/cart', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'

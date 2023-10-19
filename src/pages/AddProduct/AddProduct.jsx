@@ -21,7 +21,7 @@ const AddProduct = () => {
         const product = { name, brandName, type, price, rating, image, shortDescription };
         // const str = JSON.stringify(product);
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://tech-store-server-bma33retc-monishats-projects.vercel.app/products', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

@@ -8,7 +8,7 @@ const CartCard = ({ product, products, setProducts }) => {
     const navigate = useNavigate();
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/products/cart/${product._id}`,{
+        fetch(`https://tech-store-server-bma33retc-monishats-projects.vercel.app/products/cart/${product._id}`,{
             method: "DELETE"
         })
             .then(res => res.json())

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useFetchFeatureProducts = () => {
     const [featureProducts, setFeaturedProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://tech-store-server-bma33retc-monishats-projects.vercel.app/products')
             .then(res => res.json())
             .then(data => setFeaturedProducts(data))
     }, [])
