@@ -21,7 +21,7 @@ const UpdateProduct = () => {
 
         const product = { name, brand_name, type, price, rating, image, description };
 
-        fetch(`https://tech-store-server-pink.vercel.app/products/${_id}`, {
+        fetch(`https://tech-store-server-p0qyc2oro-monishats-projects.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

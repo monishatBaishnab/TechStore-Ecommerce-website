@@ -25,17 +25,17 @@ const Router = createBrowserRouter([
             {
                 path: '/products',
                 element: <Products />,
-                loader: () => fetch('https://tech-store-server-pink.vercel.app/products')
+                loader: () => fetch('https://tech-store-server-p0qyc2oro-monishats-projects.vercel.app/products')
             },
             {
                 path: '/products/brand/:brand',
                 element: <PrivateRouote><BrandProducts /></PrivateRouote>,
-                loader: ({params}) => fetch(`https://tech-store-server-pink.vercel.app/products/brand/${params.brand}`)
+                loader: ({params}) => fetch(`https://tech-store-server-p0qyc2oro-monishats-projects.vercel.app/products/brand/${params.brand}`)
             },
             {
                 path: '/productDetails/:id',
                 element: <PrivateRouote><ProductDetails /></PrivateRouote>,
-                loader: ({params}) => fetch(`https://tech-store-server-pink.vercel.app/products/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-store-server-p0qyc2oro-monishats-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: '/addProduct',
@@ -44,12 +44,12 @@ const Router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRouote><UpdateProduct /></PrivateRouote>,
-                loader: ({params}) => fetch(`https://tech-store-server-pink.vercel.app/products/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-store-server-p0qyc2oro-monishats-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: '/cart',
                 element: <PrivateRouote><Cart /></PrivateRouote>,
-                loader: () => fetch(`https://tech-store-server-pink.vercel.app/products/cart`)
+                loader: () => fetch(`https://tech-store-server-p0qyc2oro-monishats-projects.vercel.app/products/cart`)
             }
         ]
     },
