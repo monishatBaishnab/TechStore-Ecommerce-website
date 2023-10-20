@@ -46,7 +46,6 @@ const Regester = () => {
             })
             return;
         }
-        console.log(email, password);
         regesterWithEmailPass(email, password)
             .then(() => {
                 updateUser(name, photo)

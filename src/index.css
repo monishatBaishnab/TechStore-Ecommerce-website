@@ -53,3 +53,9 @@
 .feature .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
     content: none !important;
 }
+
+.testimonials .swiper-pagination-bullet-active{
+    width: 20px !important;
+    border-radius: 5px !important;
+    background: rgb(6 182 212) !important;
+}

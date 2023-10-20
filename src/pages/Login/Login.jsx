@@ -64,7 +64,7 @@ const Login = () => {
                         <span className="text-2xl"><AiOutlineLine /></span>
                     </div>
                     <button onClick={handleLoginWithGithub} className="w-full mt-3 rounded-md px-4 py-2 flex items-center justify-center bg-violet-100 text-violet-500 dark:bg-slate-600"><span><FiGithub /></span>Login with GitHub</button>
-                    <Link to='/' className="absolute top-5 left-5 p-2 bg-slate-100 rounded-md cursor-pointer dark:bg-slate-600 text-white">
+                    <Link to='/' className="absolute top-5 left-5 p-2 bg-slate-100 rounded-md cursor-pointer dark:bg-slate-600 dark:text-white">
                         <span className="text-2xl text-c-black"><BsArrowLeft /></span>
                     </Link>
                 </div>

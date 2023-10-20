@@ -9,7 +9,6 @@ const ThemeSwitcher = ({classList}) => {
     const [theme, setTheme] = useState(storedTheme);
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
-        console.log(storedTheme);
         setTheme(storedTheme);
     }, [])
 

@@ -15,7 +15,6 @@ const BrandProducts = () => {
     const brandProducts = useLoaderData();
     const { brand } = useParams();
     const sliders = useFetchSliders(brand);
-    console.log(sliders);
 
     return (
         <section>
@@ -36,7 +35,7 @@ const BrandProducts = () => {
                     className="services" >
 
                     {
-                        sliders?.map(slider => <SwiperSlide key={slider.name}><BrandSlide slider={slider} /></SwiperSlide>)
+                        sliders?.map(slider => <SwiperSlide key={slider.headline}><BrandSlide slider={slider} /></SwiperSlide>)
                     }
 
                 </Swiper>

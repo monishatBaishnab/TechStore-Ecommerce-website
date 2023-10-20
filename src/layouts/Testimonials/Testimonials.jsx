@@ -14,9 +14,8 @@ import SectionTitle from '../../components/SectionTitle';
 
 const Testimonials = () => {
     const testimonials = useFetchTestimonials();
-    console.log(testimonials);
     return (
-        <div className='bg-white dark:bg-slate-800'>
+        <section className='bg-white dark:bg-slate-800 testimonials'>
             <SectionTitle name='Testimonials' title='Hear What Our Community Has to Say' />
             <div className='c-container'>
                 <Swiper
@@ -40,7 +39,7 @@ const Testimonials = () => {
                         },
                     }}
                     modules={[Pagination]}
-                    className="mySwiper"
+                    className="mySwiper pb-[40px_!important]"
                 >
                     {
                         testimonials.map(testimonial => <SwiperSlide key={testimonial._id}><TestimonialsCard testimonial={testimonial} /></SwiperSlide>)
@@ -48,7 +47,7 @@ const Testimonials = () => {
                     
                 </Swiper>
             </div>
-        </div>
+        </section>
     );
 };
 
