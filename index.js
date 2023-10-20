@@ -21,11 +21,12 @@ const client = new MongoClient(uri, {
 
 const run = async () => {
     try {
-        await client.connect();
+        // await client.connect();
         const productCollection = client.db('TechStore').collection('products');
         const brandCollection = client.db('TechStore').collection('brands');
         const cartProductsCollection = client.db('TechStore').collection('cartProducts');
         const slidersCollection = client.db('TechStore').collection('sliders');
+        const testimonialsCollection = client.db('TechStore').collection('testimonials');
 
         app.get('/', (req, res) => {
             res.send('Server is Running');
@@ -40,6 +41,11 @@ const run = async () => {
             const brands = await brandCollection.find().toArray();
             res.send(brands);
         });
+
+        app.get('/testimonials', async(req, res) => {
+            const result = await testimonialsCollection.find().toArray();
+            res.send(result);
+        })
 
         app.get('/products/cart', async (req, res) => {
             const cartProducts = await cartProductsCollection.find().toArray();
