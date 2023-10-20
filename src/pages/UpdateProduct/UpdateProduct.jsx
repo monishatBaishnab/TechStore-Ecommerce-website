@@ -21,7 +21,7 @@ const UpdateProduct = () => {
 
         const product = { name, brand_name, type, price, rating, image, description };
 
-        fetch(`https://tech-store-server-bma33retc-monishats-projects.vercel.app/products/${_id}`, {
+        fetch(`https://tech-store-server-pink.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
@@ -40,7 +40,7 @@ const UpdateProduct = () => {
             })
     }
     return (
-        <section>
+        <section className="bg-slate-700">
             <PageTitle page='Update Product' name={name} />
             <div className="c-container">
                 <form onSubmit={handleAddProduct}>
@@ -57,7 +57,7 @@ const UpdateProduct = () => {
                         <Input defaultValue={image} type='text' name='image' label='Image' placeholder='Enter Product Image URL' />
                     </div>
                     <TextArea defaultValue={description} rows='5' name='shortDescription' label='Short Desctiption' placeholder='Enter Short Desctiption' />
-                    <button className="bg-violet-100 px-5 py-2 rounded-md text-violet-500 transition-all hover:bg-violet-500 hover:text-white">Update Product</button>
+                    <button className="bg-violet-100 px-5 py-2 rounded-md text-violet-500 transition-all hover:bg-violet-500 hover:text-white dark:bg-violet-700 dark:text-white">Update Product</button>
                 </form>
             </div>
         </section>

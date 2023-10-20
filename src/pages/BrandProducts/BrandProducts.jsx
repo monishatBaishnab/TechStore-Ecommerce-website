@@ -20,7 +20,7 @@ const BrandProducts = () => {
     return (
         <section>
             <PageTitle name={brand} page='Brand Products' />
-            <div className="services relative mt-2 min-h-[550px] bg-slate-100">
+            <div className="services relative min-h-[550px]">
                 <Swiper
                     navigation={{
                         nextEl: ".swiper-button-next",
@@ -40,22 +40,22 @@ const BrandProducts = () => {
                     }
 
                 </Swiper>
-                <div className='flex items-center gap-1 justify-end mt-10'>
-                    <span className='swiper-button-prev service-btn-prev p-2 text-2xl transition-all rounded-md bg-cyan-100'><BsArrowLeft className='' /></span>
-                    <span className='swiper-button-next service-btn-next p-2 text-2xl transition-all rounded-md bg-cyan-100'><BsArrowRight className='' /></span>
-                </div>
+                <span className='swiper-button-prev service-btn-prev p-2 text-2xl transition-all rounded-md bg-cyan-100'><BsArrowLeft className='' /></span>
+                <span className='swiper-button-next service-btn-next p-2 text-2xl transition-all rounded-md bg-cyan-100'><BsArrowRight className='' /></span>
             </div>
-            <div className="c-container">
-                {
-                    brandProducts.length > 0 ?
-                        <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                            {
-                                brandProducts?.map(product => <ProductCard key={product._id} product={product} />)
-                            }
-                        </div>
-                        :
-                        <Empty />
-                }
+            <div className="bg-white dark:bg-slate-800">
+                <div className="c-container">
+                    {
+                        brandProducts.length > 0 ?
+                            <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                                {
+                                    brandProducts?.map(product => <ProductCard key={product._id} product={product} />)
+                                }
+                            </div>
+                            :
+                            <Empty />
+                    }
+                </div>
             </div>
         </section>
     );

@@ -10,7 +10,7 @@ import SectionTitle from "../../components/SectionTitle";
 const FeatureProducts = () => {
     const products = useFetchFeatureProducts();
     return (
-        <section>
+        <section className="bg-white dark:bg-slate-800">
             <SectionTitle name={'Feature'} title='Explore Our Showcase of Featured Products' />
             <div className="c-container pt-2 feature">
                 <Swiper

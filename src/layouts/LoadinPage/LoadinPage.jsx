@@ -2,7 +2,7 @@ import { Oval } from "react-loader-spinner";
 
 const LoadinPage = () => {
     return (
-        <div className="flex bg-white/90 items-center justify-center fixed bottom-0 top-0 left-0 right-0">
+        <div className="flex bg-white/90 items-center justify-center fixed bottom-0 top-0 left-0 right-0 dark:bg-slate-800/90">
             <Oval
                 height={80}
                 width={80}

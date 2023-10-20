@@ -18,11 +18,11 @@ const AddProduct = () => {
         const image = form.image.value;
         const shortDescription = form.shortDescription.value;
 
-        const product = { name, brand_name: brandName, type, price, rating, image, description: shortDescription };
-        // const str = JSON.stringify(product);
-        console.log(product);
+        const brandUpper = brandName[0].toUpperCase()+brandName.slice(1);
 
-        fetch('https://tech-store-server-bma33retc-monishats-projects.vercel.app/products', {
+        const product = { name, brand_name: brandUpper, type, price, rating, image, description: shortDescription };
+
+        fetch('https://tech-store-server-pink.vercel.app/products', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -41,7 +41,7 @@ const AddProduct = () => {
             })
     }
     return (
-        <section>
+        <section className="dark:bg-slate-700">
             <SectionTitle name={section_name} title={section_title} description={section_description} />
             <div className="c-container">
                 <form onSubmit={handleAddProduct}>
@@ -58,7 +58,7 @@ const AddProduct = () => {
                         <Input required type='text' name='image' label='Image' placeholder='Enter Product Image URL' />
                     </div>
                     <TextArea required rows='5' name='shortDescription' label='Short Desctiption' placeholder='Enter Short Desctiption' />
-                    <button className="bg-violet-100 px-5 py-2 rounded-md text-violet-500 transition-all hover:bg-violet-500 hover:text-white">Add Product</button>
+                    <button className="bg-violet-100 px-5 py-2 rounded-md text-violet-500 transition-all hover:bg-violet-500 hover:text-white dark:bg-violet-700 dark:text-white">Add Product</button>
                 </form>
             </div>
         </section>

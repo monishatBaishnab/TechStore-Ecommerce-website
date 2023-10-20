@@ -28,6 +28,8 @@ const Root = () => {
         AOS.init();
     }, [])
 
+    
+
     return (
         <div>
             <Navbar />

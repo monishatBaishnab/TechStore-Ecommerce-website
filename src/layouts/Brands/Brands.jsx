@@ -10,7 +10,7 @@ const Brands = () => {
     const brands = useFetchBrands();
 
     return (
-        <section className="bg-slate-100">
+        <section className="bg-slate-100 dark:bg-slate-600">
             <SectionTitle name={section_name} title={section_title} description={section_description} />
             <div className="c-container">
                 <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">

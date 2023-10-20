@@ -10,7 +10,7 @@ const Products = () => {
     const section_title = 'Explore Our Cutting-Edge Tech Products';
     const section_description = 'Discover a curated selection of the latest and greatest in technology, from smartphones to smart gadgets.';
     return (
-        <div className="bg-slate-100">
+        <div className="bg-slate-100 dark:bg-slate-800">
             <SectionTitle title={section_title} name={section_name} description={section_description} />
             <div className="c-container">
                 {

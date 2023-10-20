@@ -8,7 +8,7 @@ const Cart = () => {
     const loadedProducts = useLoaderData();
     const [products, setProducts] = useState(loadedProducts);
     return (
-        <section>
+        <section className="dark:bg-slate-800">
             <PageTitle page={'Cart Products'} name={'Cart'} />
             <div className="c-container">
                 {
