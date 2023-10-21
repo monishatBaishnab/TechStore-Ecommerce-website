@@ -25,7 +25,7 @@ const Navbar = () => {
                     </Link>
 
                     {/* navbar nav */}
-                    <div className={`fixed top-0 bottom-0 right-0 z-50 bg-white border-l border-l-slate-100 transition-all dark:bg-slate-800 dark:border-l-slate-500 ${open ? 'w-60 opacity-100 visible' : 'w-64 invisible opacity-0'} md:border-l-0 md:z-auto md:opacity-100 md:visible md:w-auto md:bg-transparent md:border-l-none md:static`} data-aos="zoom-in" data-aos-delay="300">
+                    <div className={`fixed top-0 bottom-0 right-0 z-50 bg-white border-l border-l-slate-100 transition-all dark:bg-slate-800 dark:border-l-slate-500 ${open ? 'w-60 opacity-100 visible' : 'w-64 invisible opacity-0'} md:border-l-0 md:z-auto md:opacity-100 md:visible md:w-auto md:bg-transparent md:border-l-none md:static`} >
 
                         <div className="flex flex-col justify-between h-full">
                             {/* navbar ul */}
