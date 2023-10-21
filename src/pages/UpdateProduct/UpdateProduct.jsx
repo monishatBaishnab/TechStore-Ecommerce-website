@@ -40,7 +40,7 @@ const UpdateProduct = () => {
             })
     }
     return (
-        <section className="bg-slate-700">
+        <section className="dark:bg-slate-700">
             <PageTitle page='Update Product' name={name} />
             <div className="c-container">
                 <form onSubmit={handleAddProduct}>

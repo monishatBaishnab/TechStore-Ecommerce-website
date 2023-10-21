@@ -16,7 +16,7 @@ const Navbar = () => {
             <div className="c-container py-3">
                 <div className="flex items-center justify-between">
                     {/* navbar logo */}
-                    <Link className="flex items-center gap-2" to='/'>
+                    <Link className="flex items-center gap-2" to='/' data-aos="fade-right">
                         <img className="w-auto h-10" src="https://i.ibb.co/3zbgXFQ/tech-Eleclogo.png" alt="TechStore" />
                         <div className="text-3xl font-medium">
                             <span className="text-violet-500">Tech</span>
@@ -25,7 +25,7 @@ const Navbar = () => {
                     </Link>
 
                     {/* navbar nav */}
-                    <div className={`fixed top-0 bottom-0 right-0 z-50 bg-white border-l border-l-slate-100 transition-all dark:bg-slate-800 dark:border-l-slate-500 ${open ? 'w-60 opacity-100 visible' : 'w-64 invisible opacity-0'} md:border-l-0 md:z-auto md:opacity-100 md:visible md:w-auto md:bg-transparent md:border-l-none md:static`}>
+                    <div className={`fixed top-0 bottom-0 right-0 z-50 bg-white border-l border-l-slate-100 transition-all dark:bg-slate-800 dark:border-l-slate-500 ${open ? 'w-60 opacity-100 visible' : 'w-64 invisible opacity-0'} md:border-l-0 md:z-auto md:opacity-100 md:visible md:w-auto md:bg-transparent md:border-l-none md:static`} data-aos="zoom-in" data-aos-delay="300">
 
                         <div className="flex flex-col justify-between h-full">
                             {/* navbar ul */}
@@ -51,7 +51,7 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex items-center justify-center gap-2">
+                    <div className="flex items-center justify-center gap-2" data-aos="fade-left">
                         <Link to='/regester' className={`text-violet-500 bg-violet-100 px-4 py-2 hidden rounded-md ${user !== null || userLoading === true ? 'hidden' : 'sm:inline-block'}`}>Regester</Link>
                         <NavProfile />
                         <button onClick={() => navigate('/cart')} className="bg-violet-500 w-10 h-10  items-center justify-center rounded-md text-white text-xl cursor-pointer flex"><BsCart /></button>

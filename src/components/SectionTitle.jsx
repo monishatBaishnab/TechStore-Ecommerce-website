@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 const SectionTitle = ({ name, title, description }) => {
     return (
-        <div className="c-container text-center">
+        <div className="c-container text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <span className="text-green-500 uppercase relative">
                 <span className="absolute right-0 -top-2 w-10 h-1 bg-gradient-to-r from-green-500 to-transparent rounded-md"></span>
                 {name}

@@ -12,7 +12,7 @@ const FeatureProducts = () => {
     return (
         <section className="bg-white dark:bg-slate-800">
             <SectionTitle name={'Feature'} title='Explore Our Showcase of Featured Products' />
-            <div className="c-container pt-2 feature">
+            <div className="c-container pt-2 feature overflow-hidden">
                 <Swiper
                     navigation={{
                         nextEl: ".swiper-button-next",
@@ -34,7 +34,7 @@ const FeatureProducts = () => {
                         }
                     }}
                     modules={[Navigation]}
-                    className="feature" >
+                    className="feature overflow-hidden" >
 
                     {
                         products?.map(product => <SwiperSlide className="my-5" key={product._id}><FeatureProductCard product={product} /></SwiperSlide>)

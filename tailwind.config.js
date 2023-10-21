@@ -11,7 +11,8 @@ export default {
         'rubik': "'Rubik', sans-serif"
       },
       backgroundImage: {
-        'hero': "url('/banner.jpg')"
+        'hero': "url('/banner.jpg')",
+        'testimonials': "url('https://i.ibb.co/zbbj0Kv/marvin-meyer-SYTO3xs06f-U-unsplash.jpg')",
       }
     },
   },

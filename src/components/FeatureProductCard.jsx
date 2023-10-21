@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const FeatureProductCard = ({ product }) => {
     const { _id, image, name, type, price, rating } = product || {};
     return (
-        <div data-aos="fade-up" className="bg-white p-5 rounded-lg shadow-sm transition-all flex flex-col justify-between dark:bg-slate-500">
+        <div data-aos="zoom-out-down" className="bg-white p-5 rounded-lg shadow-sm transition-all flex flex-col justify-between dark:bg-slate-500">
             <div className="flex w-full justify-center bg-slate-100 rounded-md dark:bg-slate-600">
                 <div className="w-40 h-60 overflow-hidden rounded-md">
                     <img className="w-full h-full object-contain" src={image} alt="" />

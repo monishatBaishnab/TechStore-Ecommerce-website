@@ -58,4 +58,6 @@
     width: 20px !important;
     border-radius: 5px !important;
     background: rgb(6 182 212) !important;
+    animation: fadeIn !important;
+    animation-duration: .5s !important;
 }

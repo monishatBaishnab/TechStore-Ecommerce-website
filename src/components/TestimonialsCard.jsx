@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const TestimonialsCard = ({testimonial}) => {
     const {user, profession, profile_image_url, rating, comment, comment_time} = testimonial;
     return (
-        <div className="h-52 bg-slate-100 rounded-md dark:bg-slate-600">
+        <div data-aos="zoom-in" className="h-52 bg-slate-100 rounded-md dark:bg-slate-600">
             <div className="p-5">
                 <div className="flex gap-2 items-center">
                     <div className="w-10 h-10 rounded-full overflow-hidden">
