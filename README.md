@@ -1,5 +1,7 @@
 
 ## TechStore 
+Live link: [TechStore](https://techstore-aac9a.web.app/).
+
 Welcome to TechStore, your ultimate destination for all things tech! Our online commerce platform offers a seamless shopping experience for a wide array of tech-related products from various renowned brands. Whether you're in search of cutting-edge gadgets, top-notch electronics, or innovative accessories, TechStore has you covered.
 
 **Key Features:**
@@ -20,5 +22,6 @@ Welcome to TechStore, your ultimate destination for all things tech! Our online 
 
 8. **Light and Dark Mode:** Customize your browsing experience with our unique theme toggling feature. Whether you prefer a sleek light mode or a stylish dark mode, TechStore adapts to your visual preferences, providing a personalized touch to your shopping journey.
 
-Join us at TechStore and embark on a tech-savvy adventure. Discover, shop, and immerse yourself in the ever-evolving world of technology with confidence and ease. Live link: [TechStore](https://techstore-aac9a.web.app/).
+Join us at TechStore and embark on a tech-savvy adventure. Discover, shop, and immerse yourself in the ever-evolving world of technology with confidence and ease.
+
 `Explore our GitHub repository and discover the server-side magic on the 'server' branch. TechStore awaits - where passion meets innovation!`
